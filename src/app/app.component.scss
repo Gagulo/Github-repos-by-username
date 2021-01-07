@@ -1,0 +1,117 @@
+@import "src/assets/vars";
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+
+  input {
+    width: 60%;
+    height: 40px;
+    color: $input-color;
+    border: 1px solid $search-form-elements-border;
+    border-radius: 8px;
+    padding: 0 24px;
+    margin-right: 10px;
+  }
+
+  button {
+    width: 30%;
+    min-width: 120px;
+    height: 40px;
+    border: 1px solid $search-form-elements-border;
+    border-radius: 8px;
+    background-color: $button-background;
+    color: $color1;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+table tr {
+  background-color: $background-color;
+  border: 1px solid $color1;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table tbody {
+  .branches-details {
+    background-color: $color1;
+  }
+
+  tr:hover {
+    background: transparent;
+
+    span {
+      cursor: pointer;
+    }
+  }
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid $color1;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid $color1;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
